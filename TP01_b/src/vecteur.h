@@ -9,6 +9,7 @@
 #include <iostream>
 #include <ostream>
 #include <cassert>
+#include <string>
 using namespace std;
 
 template <class T>
@@ -23,6 +24,11 @@ public :
   	// prototypes des constructeurs et autres méthodes publiques
 	//Vecteur(size_t dimension = 3, T baseValue = T());
 	
+	/**
+	 * @brief constructeur par défaut de la classe. explicit pour éviter les appels implicites (duh)
+	 * @param dim : dimension du vecteur (3 par défaut)
+	 * @param values : valeur de base des coordonnées du vecteur, par défaut celle du constructeur par défaut du type T
+	 */
 	explicit Vecteur(size_t dim=3, T baseValue=T()) : dimension(dim), values(new T[dim])
 	{
 		assert(dimension > 0);
@@ -36,17 +42,28 @@ public :
 		delete[] values;
 	}
 	
-	Vecteur(Vecteur &v)
+	/**
+	 * @brief constructeur par copie de la classe. 
+	 * @param v : vecteur dont le type peut être autre que celui de base
+	 */
+	template <class U>
+	Vecteur(Vecteur<U> &v): dimension(v.dimensions()), values(new T[v.dimensions()])
 	{
-		dimension = v.dimensions();
-		values = new T[v.dimensions()];
-		for (size_t i = 0; i < v.dimensions(); i++)
-			values[i] = v.get(i);
+		for (size_t i = 0; i < dimension; i++)
+        		values[i] = static_cast<T>(v.get(i));
 	}
+	Vecteur(Vecteur &v): dimension(v.dimensions()), values(new T[v.dimensions()])
+	{
+		for (size_t i = 0; i < dimension; i++)
+        		values[i] = (v.get(i));
+	}
+
 	/* operators */
+
 	
-
-
+	/**
+	 * @brief opérateur d'affectation
+	 */
 	Vecteur &operator=(const Vecteur &vec)
 	{
 		if (this != &vec)
@@ -54,22 +71,26 @@ public :
 			if (values != nullptr) delete[] values; // si on référence déjà quelque chose, on le delete avant
 			values = new T[vec.dimensions()];
 			dimension = vec.dimensions();
-			for (size_t i = 0; i < dimensions(); i++) 
-				values[i] = vec.get(i);
+			for (size_t i = 0; i < dimension; i++)
+        			values[i] = static_cast<T>(vec.get(i));
 		}
 		return *this;
 	}
-
-	template <class T2>
-	Vecteur operator+(const Vecteur<T2> &vec)
+	
+	/**
+	 * @brief opérateur de somme de la mort
+	 * @param vec : vecteur à sommer au vecteur courant : le type peut être tout autre
+	 * @return : un vecteur dont le type dépend de u et v s'ils sont sommables
+	 */
+	template <class U>
+	auto operator+(const Vecteur<U> &vec)
 	{
 		assert(dimensions() == vec.dimensions());
-
-		Vecteur<T> test(vec.dimensions());
-
+		//assert((std::is_arithmetic<T>::value && std::is_arithmetic<U>::value)); // inutile : je voulais gérer le cas où on ferait une somme de Vecteur<std::string> et de Vecteur<int> (par exemple), mais c'était trop long et complexe pour rien, donc un petit assert pour empecher ça, mais au final le type de retour common_type empêche complètement de faire une telle somme, et une telle assertion empêche de concaténer des vecteurs de chaines (quel que puisse être l'intérêt d'un vecteur de chaine de caractères :/
+		Vecteur<std::common_type_t<T, U>> toReturn(vec.dimensions()); 
 		for (size_t i = 0; i < dimensions(); i++)
-			test.set(i, get(i) + vec.get(i));
-		return test;	
+			toReturn.set(i, get(i) + vec.get(i));
+		return toReturn;
 	}
 	
 	T& operator[](size_t i)
@@ -126,38 +147,21 @@ std::istream &operator>>(std::istream &in, Vecteur<T> &vec)
 	}
 	return in;
 }
-
-template <class T1, class T2>
-T1 operator*(const Vecteur<T1> &v1, const Vecteur<T2> &v2)
+// voir opérateur de somme, c'est pareil 
+template <class T, class U>
+auto operator*(const Vecteur<T> &v1, const Vecteur<U> &v2)  
 {	
 	assert(v1.dimensions() == v2.dimensions());
 
-	T1 test(0);
+	std::common_type_t<T, U> result;
 
 	for (size_t i = 0; i < v1.dimensions(); i++)
-		test += v1.get(i) * v2.get(i);
-	return test;
+		result += v1.get(i) * v2.get(i);
+	return result;
 }
 
 // Prototypes des fonctions
-
-template <class T>
-Vecteur<T> * lireVecteur(std::istream & in = std::cin)
-{
-    size_t _dim;
-    std::cout << "Dimension du vecteur : ";
-    in >> _dim;
-    Vecteur<T> * vec = new Vecteur<T>(_dim);
-
-    for (size_t i = 0; i<_dim; i++)
-    {
-        T _init;
-        std::cout << "Valeur : ";
-        in >> _init;
-        vec->set(i, _init);
-    }
-    return vec;
-}
+// inutiles pour ce tp
 
 /*void afficherVecteur(const Vecteur * v, std::ostream & out = std::cout);
 Vecteur * lireVecteur(std::istream & in = std::cin);

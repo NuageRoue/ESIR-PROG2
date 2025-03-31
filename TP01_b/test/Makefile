@@ -1,5 +1,5 @@
 # root of Google Test
-GTEST_DIR = /mnt/d/code/ESIR/ESIR1/S2/PROG/google_test/
+GTEST_DIR = /home/nuageroue/Code/ESIR/ESIR1/S2/ESIR-PROG2/google_test/
 
 # Flags passed to the preprocessor.
 CPPFLAGS += -I$(GTEST_DIR)/include

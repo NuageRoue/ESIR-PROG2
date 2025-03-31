@@ -1,6 +1,6 @@
 /** \brief Ce fichier doit contenir l'ensemble des implémentations
 relatives à la classe vecteur et aux fonctionnalités la concernant */
-
+/// les briefs sont dans le header, le reste est relativement explicite
 #include <cassert>
 #include <iostream>
 #include "vecteur.h"
@@ -21,14 +21,14 @@ Vecteur::Vecteur(size_t dim, float baseValue) : dimension(dim), values(new float
 
 Vecteur::~Vecteur()
 {
-	delete[] values;
+	delete[] values;// on delete le tableau
 }
 
 Vecteur::Vecteur(Vecteur &v)
 {
 	dimension = v.dimensions();
 	values = new float[v.dimensions()];
-	for (size_t i = 0; i < v.dimensions(); i++)
+	for (size_t i = 0; i < v.dimensions(); i++) // copie en profondeur
 		values[i] = v.get(i);
 }
 
@@ -41,7 +41,7 @@ Vecteur &Vecteur::operator=(const Vecteur &vec)
 		if (values != nullptr) delete[] values; // si on référence déjà quelque chose, on le delete avant
 		values = new float[vec.dimensions()];
 		dimension = vec.dimensions();
-		for (size_t i = 0; i < dimensions(); i++) 
+		for (size_t i = 0; i < dimensions(); i++) // copie en profondeur
 			values[i] = vec.get(i);
 	}
 	return *this;

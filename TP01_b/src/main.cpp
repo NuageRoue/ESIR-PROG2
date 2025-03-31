@@ -18,6 +18,16 @@ int main()
 	std::cout << "produit scalaire vecInt * vecFloat: " << vecInt * vecFloat << std::endl;
 	std::cout << "produit scalaire vecFloat * vecInt: " << vecFloat * vecInt << std::endl;
 
-	std::cout << "somme de vecInt et vecFloat: " << (vecFloat + vecInt) << std::endl;
+	std::cout << "somme de vecFloat et vecInt: " << (vecFloat + vecInt) << std::endl;
+	std::cout << "somme de vecInt et vecInt: " << (vecInt + vecInt) << std::endl;
+	std::cout << "somme de vecInt et vecFloat: " << (vecInt + vecFloat) << std::endl;
+
+	Vecteur<std::string> test(3, "test");
+	std::cout << "somme de str et str" << (test + test) << std::endl;
+
+	// copie 
+	Vecteur<int> vecTest(vecFloat);
+	Vecteur<int> vecTest1(vecInt);
+
 	
 }

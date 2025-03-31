@@ -2,7 +2,7 @@
 [----------] Global test environment set-up.
 [----------] 17 tests from TestVecteur
 [ RUN      ] TestVecteur.q1_assertConstructeur
-[       OK ] TestVecteur.q1_assertConstructeur (21 ms)
+[       OK ] TestVecteur.q1_assertConstructeur (3 ms)
 [ RUN      ] TestVecteur.q1_Constructeur2Param
 construction d'un vecteur à 15 dimensions, de valeur initiale 10
 [       OK ] TestVecteur.q1_Constructeur2Param (0 ms)
@@ -51,19 +51,19 @@ construction d'un vecteur à 13 dimensions, de valeur initiale 0
 [ RUN      ] TestVecteur.q11_AssertOperateurIndexationConst
 construction d'un vecteur à 15 dimensions, de valeur initiale 10
 construction d'un vecteur à 15 dimensions, de valeur initiale 10
-[       OK ] TestVecteur.q11_AssertOperateurIndexationConst (30 ms)
+[       OK ] TestVecteur.q11_AssertOperateurIndexationConst (4 ms)
 [ RUN      ] TestVecteur.q11_AssertOperateurIndexation
 construction d'un vecteur à 15 dimensions, de valeur initiale 10
 construction d'un vecteur à 15 dimensions, de valeur initiale 10
-[       OK ] TestVecteur.q11_AssertOperateurIndexation (32 ms)
+[       OK ] TestVecteur.q11_AssertOperateurIndexation (4 ms)
 [ RUN      ] TestVecteur.q11_OperateurIndexationConsultation
 construction d'un vecteur à 15 dimensions, de valeur initiale 0
 [       OK ] TestVecteur.q11_OperateurIndexationConsultation (0 ms)
 [ RUN      ] TestVecteur.q11_OperateurIndexationModification
 construction d'un vecteur à 15 dimensions, de valeur initiale 0
 [       OK ] TestVecteur.q11_OperateurIndexationModification (0 ms)
-[----------] 17 tests from TestVecteur (83 ms total)
+[----------] 17 tests from TestVecteur (11 ms total)
 
 [----------] Global test environment tear-down
-[==========] 17 tests from 1 test case ran. (83 ms total)
+[==========] 17 tests from 1 test case ran. (11 ms total)
 [  PASSED  ] 17 tests.
