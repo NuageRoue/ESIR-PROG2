@@ -1,0 +1,69 @@
+[==========] Running 17 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 17 tests from TestVecteur
+[ RUN      ] TestVecteur.q1_assertConstructeur
+[       OK ] TestVecteur.q1_assertConstructeur (21 ms)
+[ RUN      ] TestVecteur.q1_Constructeur2Param
+construction d'un vecteur à 15 dimensions, de valeur initiale 10
+[       OK ] TestVecteur.q1_Constructeur2Param (0 ms)
+[ RUN      ] TestVecteur.q1_Constructeur1Param
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q1_Constructeur1Param (0 ms)
+[ RUN      ] TestVecteur.q1_Constructeur0Param
+construction d'un vecteur à 3 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q1_Constructeur0Param (0 ms)
+[ RUN      ] TestVecteur.q1_Set
+construction d'un vecteur à 15 dimensions, de valeur initiale 10
+[       OK ] TestVecteur.q1_Set (0 ms)
+[ RUN      ] TestVecteur.q6_ConstructeurDeCopie
+construction d'un vecteur à 15 dimensions, de valeur initiale 1
+[       OK ] TestVecteur.q6_ConstructeurDeCopie (0 ms)
+[ RUN      ] TestVecteur.q6_ConstructeurDeCopieModif
+construction d'un vecteur à 15 dimensions, de valeur initiale 1
+[       OK ] TestVecteur.q6_ConstructeurDeCopieModif (0 ms)
+[ RUN      ] TestVecteur.q7_OperateurAffectationTailleDiminue
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 7 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q7_OperateurAffectationTailleDiminue (0 ms)
+[ RUN      ] TestVecteur.q7_OperateurAffectationTailleAugmente
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 7 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q7_OperateurAffectationTailleAugmente (0 ms)
+[ RUN      ] TestVecteur.q8_OperateurAdd2Vecteurs
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q8_OperateurAdd2Vecteurs (0 ms)
+[ RUN      ] TestVecteur.q8_OperateurAdd3Vecteurs
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q8_OperateurAdd3Vecteurs (0 ms)
+[ RUN      ] TestVecteur.q9_ProduitScalaire
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q9_ProduitScalaire (0 ms)
+[ RUN      ] TestVecteur.q10_OperateurSaisie
+construction d'un vecteur à 13 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q10_OperateurSaisie (0 ms)
+[ RUN      ] TestVecteur.q11_AssertOperateurIndexationConst
+construction d'un vecteur à 15 dimensions, de valeur initiale 10
+construction d'un vecteur à 15 dimensions, de valeur initiale 10
+[       OK ] TestVecteur.q11_AssertOperateurIndexationConst (30 ms)
+[ RUN      ] TestVecteur.q11_AssertOperateurIndexation
+construction d'un vecteur à 15 dimensions, de valeur initiale 10
+construction d'un vecteur à 15 dimensions, de valeur initiale 10
+[       OK ] TestVecteur.q11_AssertOperateurIndexation (32 ms)
+[ RUN      ] TestVecteur.q11_OperateurIndexationConsultation
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q11_OperateurIndexationConsultation (0 ms)
+[ RUN      ] TestVecteur.q11_OperateurIndexationModification
+construction d'un vecteur à 15 dimensions, de valeur initiale 0
+[       OK ] TestVecteur.q11_OperateurIndexationModification (0 ms)
+[----------] 17 tests from TestVecteur (83 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 1 test case ran. (83 ms total)
+[  PASSED  ] 17 tests.
