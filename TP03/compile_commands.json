@@ -1,0 +1,46 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-Dmain=SDL_main",
+      "src/Environment.cpp"
+    ],
+    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
+    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/Environment.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-Dmain=SDL_main",
+      "src/Renderer.cpp"
+    ],
+    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
+    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/Renderer.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-Dmain=SDL_main",
+      "src/Timer.cpp"
+    ],
+    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
+    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/Timer.cpp"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-Dmain=SDL_main",
+      "src/main.cpp"
+    ],
+    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
+    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/main.cpp"
+  }
+]
