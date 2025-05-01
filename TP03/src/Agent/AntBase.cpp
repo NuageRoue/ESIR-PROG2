@@ -7,7 +7,7 @@
 #include <cmath>
 
 AntBase::AntBase(Environment *env, Vector2<float> initialPos, Anthill* anthill)
-: Agent(env, initialPos, 5), anthill(anthill), life(500000/*MathUtils::random(1000, 2500)*/), speed(1),
+: Agent(env, initialPos, 1), anthill(anthill), life(500000/*MathUtils::random(1000, 2500)*/), speed(10),
   direction(0, 1), foodTransported(0), perceptionAngle(MathUtils::piDiv2), perceptionDistance(3 + getRadius())
 {}
 
@@ -69,3 +69,38 @@ void AntBase::display()
 }
 
 
+const Vector2<float>& AntBase::getDirection() const
+{
+	return direction;
+}
+
+float AntBase::getPerceptionAngle() const
+{
+	return perceptionAngle;
+}
+
+float AntBase::getFoodTransported() const
+{
+	return foodTransported;
+}
+
+float AntBase::getPerceptionDistance() const
+{
+	return perceptionDistance;
+}
+
+const Anthill* AntBase::getAnthill() const
+{
+	return anthill;
+}
+
+
+Anthill* AntBase::getAnthill()
+{
+	return anthill;
+}
+
+float &AntBase::getFoodTransported()
+{
+	return foodTransported;
+}

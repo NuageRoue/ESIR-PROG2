@@ -19,7 +19,6 @@ public:
 	// question 3.1
 	Agent(Environment *env, Vector2<float> initialPos, float radius=Environment::LocalizedEntity::defaultRadius());
 	
-	// question 3.2 : si la classe doit servir de base a d'autres methodes, doit etre abstract ? mais c'est pas clair;
 	virtual void update() = 0;
 
 	const Status getStatus() const;

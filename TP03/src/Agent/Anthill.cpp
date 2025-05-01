@@ -4,13 +4,14 @@
 #include <MathUtils.h>
 #include <Renderer.h>
 #include <SillyAnt.h>
+#include <Ant.h>
 
 Anthill::Anthill(Environment *env, Vector2<float> pos)
 : Agent(env, pos, 10), foodAmount(0)
 {
 	for (int i = 0; i < 50; i++)
 	{
-		new SillyAnt(getEnvironment(), getPosition(), this);
+		new Ant(getEnvironment(), getPosition(), this);
 	}
 }
 
@@ -24,6 +25,5 @@ void Anthill::depositFood(float quantity)
 void Anthill::update()
 {
 	Renderer::getInstance()->drawCircle(getPosition(), getRadius(), Renderer::Color(0, 0, 255, 255)); // a termes, petite boucle pour separer rendering du calcul ?
-	std::cout << "anthil: dt=" << Timer::dt() << std::endl;
 	
 }

@@ -77,6 +77,10 @@ int main(int /*argc*/, char ** /*argv*/)
 	// The main event loop...
 	SDL_Event event;
 	bool exit = false;
+
+	Uint64 previousTicks = SDL_GetPerformanceCounter();
+	const double frequency = static_cast<double>(SDL_GetPerformanceFrequency());
+
 	while (!exit) 
 	{
 		// 1 - We handle events 
@@ -94,7 +98,12 @@ int main(int /*argc*/, char ** /*argv*/)
 			}
 		}
 		// 2 - We update the simulation
-		Timer::update(0.5);
+		
+		Uint64 currentTicks = SDL_GetPerformanceCounter();
+		double dt = static_cast<double>(currentTicks - previousTicks) / frequency;
+		previousTicks = currentTicks;
+
+		Timer::update(dt);
 		onSimulate();
 		// 3 - We render the scene
 		Renderer::getInstance()->flush();

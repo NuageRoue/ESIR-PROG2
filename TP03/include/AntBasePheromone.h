@@ -9,12 +9,11 @@
 
 class AntBasePheromone : public AntBase
 {
-private:
+protected:
 	static constexpr float pheromoneAmount_withFood = 100;
 	static constexpr float pheromoneAmount_withoutFood = 10;
-
-	static constexpr float pheromonePerceptionDistance = 8;
 public:
+	static constexpr float pheromonePerceptionDistance = 8;
 	AntBasePheromone(Environment *env, Vector2<float> initialPos, Anthill* anthill);
 
 	void putPheromone(float q);

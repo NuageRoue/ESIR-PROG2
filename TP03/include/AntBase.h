@@ -1,5 +1,5 @@
-#ifndef ANT
-#define ANT
+#ifndef ANTBASE
+#define ANTBASE
 
 #include <Vector2.h>
 #include <Agent.h>
@@ -35,6 +35,15 @@ public:
 	void GetFood(Food *toPerceive);
 	bool checkLifeSpan();
 	void display();
+
+	const Vector2<float>& getDirection() const;
+	float getPerceptionAngle() const;
+	float getFoodTransported() const;
+	float getPerceptionDistance() const;
+
+	const Anthill* getAnthill() const;
+	Anthill* getAnthill();
+	float& getFoodTransported();
 };
 
 #endif

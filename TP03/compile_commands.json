@@ -4,43 +4,142 @@
       "/usr/bin/x86_64-w64-mingw32-g++",
       "-c",
       "-I./include",
-      "-Dmain=SDL_main",
+      "-o",
+      "test.exe",
       "src/Environment.cpp"
     ],
-    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
-    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/Environment.cpp"
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Environment.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
   },
   {
     "arguments": [
       "/usr/bin/x86_64-w64-mingw32-g++",
       "-c",
       "-I./include",
-      "-Dmain=SDL_main",
+      "-o",
+      "test.exe",
       "src/Renderer.cpp"
     ],
-    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
-    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/Renderer.cpp"
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Renderer.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
   },
   {
     "arguments": [
       "/usr/bin/x86_64-w64-mingw32-g++",
       "-c",
       "-I./include",
-      "-Dmain=SDL_main",
+      "-o",
+      "test.exe",
       "src/Timer.cpp"
     ],
-    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
-    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/Timer.cpp"
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Timer.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
   },
   {
     "arguments": [
       "/usr/bin/x86_64-w64-mingw32-g++",
       "-c",
       "-I./include",
-      "-Dmain=SDL_main",
+      "-o",
+      "test.exe",
       "src/main.cpp"
     ],
-    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03",
-    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP03/src/main.cpp"
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/main.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/Agent.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/Agent.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/AntBase.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/AntBase.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/AntBasePheromone.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/AntBasePheromone.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/Anthill.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/Anthill.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/Food.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/Food.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/Pheromone.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/Pheromone.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
+  },
+  {
+    "arguments": [
+      "/usr/bin/x86_64-w64-mingw32-g++",
+      "-c",
+      "-I./include",
+      "-o",
+      "test.exe",
+      "src/Agent/SillyAnt.cpp"
+    ],
+    "directory": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03",
+    "file": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/src/Agent/SillyAnt.cpp",
+    "output": "/home/nuageroue/Code/ESIR/ESIR1/S2/PROG2/TP03/test.exe"
   }
 ]
