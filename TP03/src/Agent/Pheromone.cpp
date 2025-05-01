@@ -28,6 +28,5 @@ void Pheromone::update()
 		return;
 	}
 	pheromoneAmount -= 0.01 * Timer::dt();
-	std::cout << "pheromone" << std::endl;	
 	Renderer::getInstance()->drawCircle(getPosition(), getRadius(), Renderer::Color(0, 128, 128, std::min(getQuantity(), 255.0f)));
 }

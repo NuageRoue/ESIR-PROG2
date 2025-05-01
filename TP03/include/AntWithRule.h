@@ -14,12 +14,14 @@ private:
 
 	class PerceivePheromoneRule : public AbstractAntRule
 	{
+	public:
 		PerceivePheromoneRule(AntBasePheromone*ant);
 		void action() override;
 		bool condition() override;
 	};
 	class PerceiveFoodRule : public AbstractAntRule
 	{
+	public:
 		PerceiveFoodRule(AntBasePheromone*ant);
 
 		void action() override;
@@ -28,6 +30,7 @@ private:
 
 	class OnFoodRule : public AbstractAntRule
 	{
+	public:
 		OnFoodRule(AntBasePheromone*ant);
 
 		void action() override;
@@ -36,6 +39,7 @@ private:
 
 	class OnAnthillRule : public AbstractAntRule
 	{
+	public:
 		OnAnthillRule(AntBasePheromone*ant);
 
 		void action() override;
@@ -44,6 +48,7 @@ private:
 	
 	class ErraticMovementRule : public AbstractAntRule
 	{
+	public:
 		ErraticMovementRule(AntBasePheromone*ant);
 
 		void action() override;
@@ -51,6 +56,7 @@ private:
 
 	class HasFoodRule : public ErraticMovementRule
 	{
+	public:
 		HasFoodRule(AntBasePheromone*ant);
 
 		bool condition() override;
@@ -59,6 +65,7 @@ private:
 
 	class HasNoFoodRule : public ErraticMovementRule
 	{
+	public:
 		HasNoFoodRule(AntBasePheromone*ant);
 
 		bool condition() override;

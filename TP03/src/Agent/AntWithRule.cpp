@@ -1,3 +1,4 @@
+#include "AbstractAntRule.h"
 #include "AbstractRule.h"
 #include "AntBasePheromone.h"
 #include <AntWithRule.h>
@@ -8,8 +9,33 @@
 #include <OrRule.h>
 
 
+AntWithRule::PerceivePheromoneRule::PerceivePheromoneRule(AntBasePheromone* ant)
+: AbstractAntRule(ant)
+{}
+AntWithRule::PerceiveFoodRule::PerceiveFoodRule(AntBasePheromone* ant)
+: AbstractAntRule(ant)
+{}
+
+AntWithRule::OnFoodRule::OnFoodRule(AntBasePheromone* ant)
+: AbstractAntRule(ant)
+{}
+
+AntWithRule::OnAnthillRule::OnAnthillRule(AntBasePheromone* ant)
+: AbstractAntRule(ant)
+{}
 
 
+AntWithRule::ErraticMovementRule::ErraticMovementRule(AntBasePheromone* ant)
+: AbstractAntRule(ant)
+{}
+
+AntWithRule::HasFoodRule::HasFoodRule(AntBasePheromone* ant)
+: ErraticMovementRule(ant)
+{}
+
+AntWithRule::HasNoFoodRule::HasNoFoodRule(AntBasePheromone* ant)
+: ErraticMovementRule(ant)
+{}
 void AntWithRule::PerceivePheromoneRule::action() 
 {
 	std::vector<Pheromone*> pheromonePerceived = ant->perceive<Pheromone>(ant->getDirection(), ant->getPerceptionAngle(), ant->pheromonePerceptionDistance + ant->getRadius());
@@ -148,7 +174,10 @@ bool AntWithRule::HasNoFoodRule::condition()
 
 	
 AntWithRule::AntWithRule(Environment *env, Vector2<float> initialPos, Anthill* anthill)
-: AntBasePheromone(env, initialPos, anthill), rule({new MasterOrRule(new HasFoodRule(this), new)})
+: AntBasePheromone(env, initialPos, anthill), rule({new MasterOrRule(new HasNoFoodRule(this), new OrRule({new OnFoodRule(this), new PerceiveFoodRule(this), new PerceivePheromoneRule(this)})),
+						new MasterOrRule(new HasFoodRule(this), new OrRule({new OnAnthillRule(this), new PerceivePheromoneRule(this)}))
+
+})
 {
 	
 
