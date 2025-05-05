@@ -18,7 +18,7 @@ public:
 
 	// question 3.1
 	Agent(Environment *env, Vector2<float> initialPos, float radius=Environment::LocalizedEntity::defaultRadius());
-	
+	virtual ~Agent() = default;
 	virtual void update() = 0;
 
 	const Status getStatus() const;

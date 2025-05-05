@@ -157,8 +157,8 @@ bool AntWithRule::OnAnthillRule::condition()
 void AntWithRule::ErraticMovementRule::action()
 {
 	
-	float updateAngle = MathUtils::random(	-MathUtils::pi * Timer::dt(),
-						 MathUtils::pi * Timer::dt());
+	float updateAngle = MathUtils::random(	-2 * MathUtils::pi * Timer::dt(),
+						 2 * MathUtils::pi * Timer::dt());
 	ant->rotate(updateAngle);
 }
 

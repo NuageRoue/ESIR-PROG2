@@ -3,4 +3,6 @@
 
 AbstractAntRule::AbstractAntRule(AntBasePheromone *ant)
 : ant(ant)
-{}
+{
+	ant->AddRule(this);
+}
