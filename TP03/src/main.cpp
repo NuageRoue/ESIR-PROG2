@@ -60,17 +60,63 @@ void onSimulate()
 /// <returns></returns>
 int main(int /*argc*/, char ** /*argv*/)
 {
-	//Renderer::initialize(windowWidth(), windowHeight());
+	// 1 - Initialization of SDL
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS/* | SDL_INIT_AUDIO*/) != 0) {
+		SDL_Log("Unable to initialize SDL: %s", SDL_GetError());
+		return 1;
+	}
+	// 2 - Initialization of the renderer
+	Renderer::initialize(windowWidth(), windowHeight());
 
 	// 3 - Creation of an environment
 	Environment environment(windowWidth(), windowHeight());
 
 	// 4 - We change the seed of the random number generator
 	srand((unsigned int)time(NULL));
+
+	// The main event loop...
+	SDL_Event event;
+	bool exit = false;
+
+	Uint64 previousTicks = SDL_GetPerformanceCounter();
+	const double frequency = static_cast<double>(SDL_GetPerformanceFrequency());
+
+	while (!exit) 
+	{
+		// 1 - We handle events 
+		while (SDL_PollEvent(&event))
+		{
+			if ((event.type == SDL_QUIT) || (event.type == SDL_KEYDOWN && event.key.keysym.sym == 'q'))
+			{
+				::std::cout << "Exit signal detected" << ::std::endl;
+				exit = true;
+				break;
+			}
+			if (event.type == SDL_KEYDOWN)
+			{
+				onKeyPressed((char)event.key.keysym.sym, &environment);
+			}
+		}
+		// 2 - We update the simulation
+		
+		Uint64 currentTicks = SDL_GetPerformanceCounter();
+		double dt = static_cast<double>(currentTicks - previousTicks) / frequency;
+		previousTicks = currentTicks;
+
+		Timer::update(dt);
+		onSimulate();
+		// 3 - We render the scene
+		Renderer::getInstance()->flush();
+	}
+
+	std::cout << "Shutting down renderer..." << std::endl;
+	Renderer::finalize();
 	
-	new Anthill(&environment, environment.randomPosition());
 	std::cout << "Shutting down remaining agents..." << std::endl;
 	Agent::finalize();
+
+	std::cout << "Shutting down SDL" << std::endl;
+	SDL_Quit();
 
 	return 0;
 }

@@ -1,1 +1,0 @@
- x86_64-w64-mingw32-g++ src/*.cpp src/Agent/*.cpp -I./include -lmingw32 -lSDL2_gfx -lSDL2main -lSDL2 -o test.exe

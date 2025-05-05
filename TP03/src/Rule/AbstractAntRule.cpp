@@ -1,8 +1,8 @@
-#include "AntBasePheromone.h"
+#include "AbstractRule.h"
 #include <AbstractAntRule.h>
+#include <AntBasePheromone.h>
 
-AbstractAntRule::AbstractAntRule(AntBasePheromone *ant)
+
+AbstractAntRule::AbstractAntRule(AntBasePheromone* ant)
 : ant(ant)
-{
-	ant->AddRule(this);
-}
+{}
