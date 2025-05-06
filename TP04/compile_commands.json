@@ -1,0 +1,14 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-I./include",
+      "-I./lib",
+      "liboutils.a",
+      "src/main.cpp"
+    ],
+    "directory": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP04",
+    "file": "/mnt/d/code/ESIR/ESIR1/S2/PROG/ESIR-PROG2/TP04/src/main.cpp"
+  }
+]
