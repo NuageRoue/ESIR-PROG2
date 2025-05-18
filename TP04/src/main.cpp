@@ -8,9 +8,10 @@
 #include "constantes.h"
 #include "enregistreur_fichier.h"
 #include "enregistreur_fichier_texte.h"
-//#include "harmonique.h"
+#include "harmonique.h"
 #include "signal_constant.h"
 
+/*
 void
 q2_signal_constant()
 {
@@ -23,7 +24,8 @@ q2_signal_constant()
     enregistreur.calculer();
   }
 }
-/*
+*/
+
 void
 q4_harmonique()
 {
@@ -36,11 +38,11 @@ q4_harmonique()
     enregistreur.calculer();
   }
 }
-*/
+
 int
 main()
 {
-  q2_signal_constant();
-  //  q4_harmonique();
+  //q2_signal_constant();
+q4_harmonique();
   return 0;
 }
