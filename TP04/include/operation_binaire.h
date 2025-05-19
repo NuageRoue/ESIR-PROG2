@@ -3,6 +3,8 @@
 
 #include <filtre_base.h>
 #include <cassert>
+#include <iostream>
+#include <ostream>
 template<typename Operator>
 class operation_binaire : public filtre_base
 {
@@ -21,12 +23,12 @@ public:
 		//getEntree(1); // entree 1
 	
 		assert(yaDesEchantillons());
-	
+		
 		double value;
 		value = op(getEntree(0)->extraire(), getEntree(1)->extraire());
 	
 		getSortie(0)->inserer(value);
-
+		//std::cout << "opbin done; " << std::endl;
 	}
 
 
