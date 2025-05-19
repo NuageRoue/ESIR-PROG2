@@ -3,16 +3,16 @@
 #include <cassert>
 #include <imp_flot.h>
 
-std::vector<std::shared_ptr<flot>> flots;
+//std::vector<std::shared_ptr<flot>> flots_entrees;
 
 consommateur_base::consommateur_base(int nbSortie)
-: nbSortie(nbSortie), flots(nbSortie, std::make_shared<imp_flot>())
+: nbSortie(nbSortie), flots_entrees(nbSortie, std::make_shared<imp_flot>())
 {}
 
 void consommateur_base::connecterEntree(const std::shared_ptr<flot> & flot, unsigned int position)
 {
 	assert(position < nbEntrees());
-	flots[position] = flot;
+	flots_entrees[position] = flot;
 }
 
 unsigned int consommateur_base::nbEntrees() const
@@ -24,5 +24,17 @@ const std::shared_ptr<flot> & consommateur_base::getEntree(unsigned int numsorti
 {
 	assert(numsortie < nbEntrees());
 
-	return flots[numsortie];
+	return flots_entrees[numsortie];
+}
+
+
+bool consommateur_base::yaDesEchantillons() const 
+{
+	for(std::shared_ptr<flot> flow : flots_entrees)
+	{
+		if (flow->vide())
+			return false;
+	}
+
+	return true;
 }

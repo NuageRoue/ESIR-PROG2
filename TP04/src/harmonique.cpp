@@ -13,5 +13,5 @@ void harmonique::calculer()
 	double value;
 	value =  std::sin(((double)i/MixageSonore::frequency)*2*MixageSonore::pi * freqw + shiftw);
 	i++;
-	flots[0]->inserer(value);
+	flots_sortie[0]->inserer(value);
 }

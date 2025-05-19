@@ -1,26 +1,26 @@
-#ifndef PRODUCTEUR_BASE
-#define PRODUCTEUR_BASE
+#ifndef CONSOMMATEUR_BASE
+#define CONSOMMATEUR_BASE
 
 #include "consommateur.h"
 #include <memory>
 #include <flot.h>
 #include <vector>
 
-class consommateur_base : public consommateur
+class consommateur_base : public virtual consommateur
 {
 protected:
-	virtual void connecterEntree(const std::shared_ptr<flot> & f, unsigned int numentree) override;
-	std::vector<std::shared_ptr<flot>> flots;
+	std::vector<std::shared_ptr<flot>> flots_entrees;
 	int nbSortie;
 
 public:
 
 	consommateur_base(int nbEntrees);
-	~consommateur_base();
+	virtual ~consommateur_base() = default;
 
 	virtual unsigned int nbEntrees() const override;
 	virtual const std::shared_ptr<flot> & getEntree(unsigned int numentree) const override;
 	virtual bool yaDesEchantillons() const override;
+	virtual void connecterEntree(const std::shared_ptr<flot> & f, unsigned int numentree) override;
 
 
 };
