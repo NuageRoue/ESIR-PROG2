@@ -12,6 +12,7 @@
 #include "harmonique.h"
 #include <multiplicateur.h>
 #include <operation_binaire.h>
+#include <volume.h>
 #include "signal_constant.h"
 
 /*
@@ -83,12 +84,30 @@ q10_multiplicateur()
   }
 }
 
+void
+q12_volume()
+{
+  harmonique la440(440); // la 440Hz (voir fr.wikipedia.org/wiki/Note_de_musique)
+  volume volume(.1);
+  volume.connecterEntree(la440.getSortie(0), 0);
+  volume.setup();
+  enregistreur_fichier enregistreur("12_volume.raw", 1);	// fichier mono
+  enregistreur.connecterEntree(volume.getSortie(0), 0);
+  // produire 2 secondes de son
+  for (unsigned long int i = 0; i < 2 * MixageSonore::frequency; ++i) {
+    la440.calculer();
+    volume.calculer();
+    enregistreur.calculer();
+  }
+  
+}
 int
 main()
 {
   //q2_signal_constant();
-  //q4_harmonique();
-  q9_multiplicateur();
-  q10_multiplicateur();
+  q4_harmonique();
+  //q9_multiplicateur();
+  //q10_multiplicateur();
+  q12_volume();
   return 0;
 }

@@ -10,7 +10,7 @@ class producteur_base : virtual public producteur
 {
 
 protected:
-	virtual void connecterSortie(std::shared_ptr<flot> & flot, unsigned int position);
+	virtual void connecterSortie(const std::shared_ptr<flot> & flot, unsigned int position);
 	std::vector<std::shared_ptr<flot>> flots_sortie;
 	int nbSortie;
 

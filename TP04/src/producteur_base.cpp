@@ -9,7 +9,7 @@ producteur_base::producteur_base(int nbSortie)
 : nbSortie(nbSortie), flots_sortie(nbSortie, std::make_shared<imp_flot>())
 {}
 
-void producteur_base::connecterSortie(std::shared_ptr<flot> & flot, unsigned int position)
+void producteur_base::connecterSortie(const std::shared_ptr<flot> & flot, unsigned int position)
 {
 	assert(position < nbSorties());
 	flots_sortie[position] = flot;
